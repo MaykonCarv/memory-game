@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Game | Prototype</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- TELA INICIAL -->
+  <section id="screen-home" class="screen active">
+    <h1>🧠 Memory Game</h1>
+    <p class="subtitle">Um jogo da memória com estilo gamer</p>
+
+    <div class="menu">
+      <button onclick="goTo('screen-play-setup')">🎮 Jogar</button>
+      <button onclick="goTo('screen-deck')">🃏 Criar Baralho</button>
+      <button onclick="goTo('screen-instructions')">📘 Instruções</button>
+      <button onclick="goTo('screen-credits')">💙 Créditos</button>
+    </div>
+  </section>
+
+  <!-- CONFIGURAÇÃO DO JOGO -->
+  <section id="screen-play-setup" class="screen">
+    <h2>Configuração do Jogo</h2>
+
+    <label for="gameMode">Modo de jogo</label><br>
+    <select id="gameMode">
+      <option value="solo">Sozinho</option>
+      <option value="team">Equipe</option>
+    </select>
+
+    <br><br>
+
+    <label for="pairs">Quantidade de pares</label><br>
+    <select id="pairs">
+      <option value="4">4 pares</option>
+      <option value="6">6 pares</option>
+      <option value="8">8 pares</option>
+    </select>
+
+    <div class="menu">
+      <button onclick="startGame()">▶ Iniciar</button>
+      <button class="secondary" onclick="goTo('screen-home')">⬅ Voltar</button>
+    </div>
+  </section>
+
+  <!-- TELA DO JOGO -->
+  <section id="screen-game" class="screen">
+    <h2>Jogo da Memória</h2>
+
+    <div id="gameBoard" class="game-board"></div>
+
+    <button class="secondary" onclick="goTo('screen-home')">⏹ Encerrar</button>
+  </section>
+
+  <!-- CRIAR BARALHO -->
+  <section id="screen-deck" class="screen">
+    <h2>Criar Baralho</h2>
+    <p>Funcionalidade em desenvolvimento.</p>
+    <p>O jogador poderá criar cartas com textos, perguntas ou imagens.</p>
+
+    <button class="secondary" onclick="goTo('screen-home')">⬅ Voltar</button>
+  </section>
+
+  <!-- INSTRUÇÕES -->
+  <section id="screen-instructions" class="screen">
+    <h2>Como Jogar</h2>
+    <p>Vire duas cartas por vez e encontre os pares iguais.</p>
+    <p>O jogo pode ser jogado sozinho ou em equipe.</p>
+
+    <button class="secondary" onclick="goTo('screen-home')">⬅ Voltar</button>
+  </section>
+
+  <!-- CRÉDITOS -->
+  <section id="screen-credits" class="screen">
+    <h2>Créditos</h2>
+    <p>Projeto desenvolvido como protótipo educacional.</p>
+    <p>Feito com 💙 usando HTML, CSS e JavaScript puro.</p>
+
+    <button class="secondary" onclick="goTo('screen-home')">⬅ Voltar</button>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
